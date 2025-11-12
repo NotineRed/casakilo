@@ -49,6 +49,21 @@ const SERVER_BASE = new URL('server/', window.location.href).pathname.replace(/\
     });
   });
 
+  // Auto-hide broken images in gallery
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('error', function() {
+      this.style.display = 'none';
+    });
+    // Preload check
+    if (!img.complete || img.naturalHeight === 0) {
+      img.addEventListener('load', function() {
+        if (this.naturalHeight === 0) {
+          this.style.display = 'none';
+        }
+      });
+    }
+  });
+
   // Booking quick request form -> email
   const form = document.getElementById('requestForm');
   if (form) {
