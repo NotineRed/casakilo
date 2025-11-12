@@ -120,7 +120,8 @@ button,
 .brand-logo {
     width: 36px;
     height: 36px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .brand-text {
@@ -334,7 +335,10 @@ button,
 
 .hero-logo {
     width: 140px;
+    height: 140px;
     margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
     filter: drop-shadow(0 10px 30px rgba(212, 165, 116, 0.5));
 }
 
@@ -1003,6 +1007,7 @@ textarea {
     }
     .hero-logo {
         width: 80px;
+        height: 80px;
     }
     .section h2 {
         font-size: 1.4rem;
