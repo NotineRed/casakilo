@@ -6,17 +6,21 @@
 }
 
 :root {
-    --bg: #f0faf8;
-    --primary: #4ecdc4;
-    --text: #2d4a4a;
+    --bg: #faf8f5;
+    --primary: #d4a574;
+    --primary-dark: #b8915f;
+    --text: #2d2520;
     --light: #fff;
+    --accent: #e8d5c4;
 }
 
 [data-theme="dark"] {
-    --bg: #1a1a2e;
-    --primary: #e94560;
-    --text: #eaeaea;
-    --light: #16213e;
+    --bg: #1a1612;
+    --primary: #d4a574;
+    --primary-dark: #b8915f;
+    --text: #f5f0eb;
+    --light: #2d2520;
+    --accent: #3d3530;
 }
 
 body {
@@ -39,13 +43,13 @@ body {
     position: absolute;
     width: 1800px;
     height: 1800px;
-    background: linear-gradient(-45deg, var(--primary), #44a08d);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     border-radius: 50%;
     left: -20%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(212, 165, 116, 0.3);
 }
 
 .form-box {
@@ -104,17 +108,17 @@ body {
 
 .input-box:focus-within {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15);
 }
 
 .input-box i {
-    color: #5fb3a9;
+    color: var(--primary);
     font-size: 1.1rem;
     margin-right: 12px;
 }
 
 [data-theme="dark"] .input-box i {
-    color: #e94560;
+    color: var(--primary);
 }
 
 .input-box input,
@@ -131,7 +135,7 @@ body {
 
 .input-box input::placeholder,
 .input-box textarea::placeholder {
-    color: #1a3333;
+    color: #8b7355;
     opacity: 0.7;
 }
 
@@ -158,7 +162,7 @@ body {
 .submit-btn {
     width: 100%;
     height: 55px;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: #fff;
     border: none;
     border-radius: 15px;
@@ -171,19 +175,19 @@ body {
     justify-content: center;
     gap: 10px;
     margin: 20px 0 10px;
-    box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3);
+    box-shadow: 0 8px 20px rgba(212, 165, 116, 0.4);
     transition: all 0.3s;
 }
 
 .submit-btn:hover {
-    background: #3db5ac;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #a37a4d 100%);
     transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(78, 205, 196, 0.4);
+    box-shadow: 0 12px 30px rgba(212, 165, 116, 0.5);
 }
 
 .info-text {
     text-align: center;
-    color: #6b8585;
+    color: var(--primary-dark);
     font-size: 0.9rem;
     margin-top: 15px;
     display: flex;
@@ -278,13 +282,15 @@ body {
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
-    border: 2px solid #5fb3a9;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.2);
     transition: all 0.3s;
 }
 
 .back-btn:hover {
     transform: translateX(-5px);
+    background: var(--primary);
+    color: #fff;
 }
 
 .theme-btn {
@@ -295,20 +301,23 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid #5fb3a9;
+    border: 2px solid var(--primary);
     background: var(--bg);
-    color: #5fb3a9;
+    color: var(--primary);
     font-size: 1.3rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.2);
     transition: all 0.3s;
 }
 
 .theme-btn:hover {
     transform: scale(1.1) rotate(15deg);
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
 }
 
 
