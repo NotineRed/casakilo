@@ -1,0 +1,8 @@
+{
+  "name": "casavacanzekilo/site",
+  "description": "Casa Vacanze Kilò - PHPMailer SMTP setup",
+  "type": "project",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}

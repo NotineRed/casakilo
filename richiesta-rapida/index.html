@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiesta Rapida - Casa Kilo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="theme-toggle">
+        <button type="button" class="theme-btn" id="themeToggleBtn" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="main-wrapper" id="mainContainer">
+        <div class="animated-circle"></div>
+
+        <div class="content-wrapper">
+            <div class="forms-section">
+                <form class="auth-form login-form" id="loginForm">
+                    <h2 class="form-heading">Accedi</h2>
+
+                    <div class="field-container">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Nome utente" autocomplete="username">
+                        <span></span>
+                    </div>
+
+                    <div class="field-container">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPass" placeholder="Password" autocomplete="current-password">
+                        <i class="far fa-eye eye-icon" onclick="togglePasswordVisibility('loginPass', this)"></i>
+                    </div>
+
+                    <a href="#" class="text-link">Hai dimenticato la password?</a>
+
+                    <button type="submit" class="action-button">Accedi</button>
+
+                    <p class="social-heading">Oppure accedi con:</p>
+
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </form>
+
+                <form class="auth-form signup-form" id="signupForm">
+                    <h2 class="form-heading">Crea Account</h2>
+
+                    <div class="field-container">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Nome utente" autocomplete="username">
+                        <span></span>
+                    </div>
+
+                    <div class="field-container">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" autocomplete="email">
+                        <span></span>
+                    </div>
+
+                    <div class="field-container">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPass" placeholder="Password" autocomplete="new-password">
+                        <i class="far fa-eye eye-icon" onclick="togglePasswordVisibility('signupPass', this)"></i>
+                    </div>
+
+                    <div class="terms-check">
+                        <input type="checkbox" id="acceptTerms">
+                        <label for="acceptTerms">Accetto i <a href="#">termini e condizioni</a></label>
+                    </div>
+
+                    <button type="submit" class="action-button">Registrati</button>
+
+                    <p class="social-heading">Oppure registrati con:</p>
+
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="side-panels">
+            <div class="info-panel left-info">
+                <div class="panel-content">
+                    <h3>Non hai un account?</h3>
+                    <p>Crea il tuo account per effettuare richieste rapide e salvare i tuoi dati</p>
+                    <button class="transparent-btn" onclick="switchToRegister()">Registrati</button>
+                </div>
+            </div>
+
+            <div class="info-panel right-info">
+                <div class="panel-content">
+                    <h3>Hai già un account?</h3>
+                    <p>Accedi per visualizzare le tue richieste e gestire i tuoi ordini</p>
+                    <button class="transparent-btn" onclick="switchToLogin()">Accedi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

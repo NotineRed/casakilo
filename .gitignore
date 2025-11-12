@@ -1,0 +1,4 @@
+# File PHP (non funzionano su GitHub Pages)
+*.php
+PHPMailer/
+prenotazioni.txt

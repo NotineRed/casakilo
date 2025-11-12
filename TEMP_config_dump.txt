@@ -1,0 +1,21 @@
+<?php
+// Basic configuration for PHP registration + email verification
+
+// Base URL of your site, used to build verification links.
+// Example for local dev with PHP built-in server: http://localhost:8000
+const APP_URL = 'http://localhost:8000';
+
+// Path to SQLite database file (created automatically if missing)
+const DB_PATH = __DIR__ . '/db.sqlite';
+
+// Mailtrap Email Sending API
+// Generate a token in Mailtrap (Email Testing > SMTP/API Tokens)
+// Docs: https://mailtrap.io/api/
+const MAILTRAP_TOKEN = 'REPLACE_WITH_MAILTRAP_TOKEN';
+const MAILTRAP_FROM_EMAIL = 'no-reply@example.com';
+const MAILTRAP_FROM_NAME = 'Casa Vacanze Kilò';
+
+// CORS: allow same-origin by default; set '*' for testing from anywhere
+const CORS_ALLOW_ORIGIN = '*';
+
+

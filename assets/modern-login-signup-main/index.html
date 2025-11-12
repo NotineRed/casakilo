@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenota Casa Kilò</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a href="../../index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Torna alla Home
+    </a>
+
+    <button class="theme-btn" id="themeBtn">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="wrapper">
+        <div class="circle"></div>
+
+        <div class="form-box">
+            <form id="bookingForm">
+                <div class="header">
+                    <i class="fas fa-home-heart"></i>
+                    <h2>Prenota Casa Kilò</h2>
+                    <p>Compila il form per ricevere un preventivo</p>
+                </div>
+
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="nome" placeholder="Nome e Cognome" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-box phone-input">
+                    <i class="fas fa-phone"></i>
+                    <select name="prefisso" id="prefissoSelect" required>
+                        <option value="+39" data-flag="🇮🇹">🇮🇹 +39</option>
+                        <option value="+1" data-flag="🇺🇸">🇺🇸 +1</option>
+                        <option value="+44" data-flag="🇬🇧">🇬🇧 +44</option>
+                        <option value="+33" data-flag="🇫🇷">🇫🇷 +33</option>
+                        <option value="+49" data-flag="🇩🇪">🇩🇪 +49</option>
+                        <option value="+34" data-flag="🇪🇸">🇪🇸 +34</option>
+                        <option value="+41" data-flag="🇨🇭">🇨🇭 +41</option>
+                        <option value="+43" data-flag="🇦🇹">🇦🇹 +43</option>
+                        <option value="+86" data-flag="🇨🇳">🇨🇳 +86</option>
+                        <option value="+81" data-flag="🇯🇵">🇯🇵 +81</option>
+                    </select>
+                    <input type="tel" name="telefono" id="telefonoInput" placeholder="Numero di telefono" required>
+                </div>
+
+                <div class="date-row">
+                    <div class="input-box">
+                        <i class="fas fa-calendar"></i>
+                        <input type="text" name="checkin" id="checkinInput" placeholder="Check-in (gg/mm/aaaa)" maxlength="10" required>
+                    </div>
+                    <div class="input-box">
+                        <i class="fas fa-calendar"></i>
+                        <input type="text" name="checkout" id="checkoutInput" placeholder="Check-out (gg/mm/aaaa)" maxlength="10" required>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <i class="fas fa-users"></i>
+                    <select name="ospiti" required>
+                        <option value="">Numero Ospiti</option>
+                        <option value="1">1 Ospite</option>
+                        <option value="2">2 Ospiti</option>
+                        <option value="3">3 Ospiti</option>
+                        <option value="4">4 Ospiti</option>
+                    </select>
+                </div>
+
+                <div class="input-box textarea-box">
+                    <i class="fas fa-message"></i>
+                    <textarea name="messaggio" placeholder="Note (opzionale)..." rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Richiedi Preventivo
+                </button>
+
+                <p class="info-text">
+                    <i class="fas fa-clock"></i> Ti risponderemo al più presto
+                </p>
+            </form>
+        </div>
+
+        <div class="info-panel">
+            <h3>🏛️ Casa Kilò Palermo</h3>
+            <p>Nel cuore di Palermo</p>
+
+            <div class="features">
+                <div class="feat"><i class="fas fa-star"></i> Posizione centrale</div>
+                <div class="feat"><i class="fas fa-wifi"></i> Wi-Fi gratuito</div>
+                <div class="feat"><i class="fas fa-snowflake"></i> Aria condizionata</div>
+                <div class="feat"><i class="fas fa-utensils"></i> Cucina attrezzata</div>
+            </div>
+
+            <div class="contacts">
+                <a href="tel:+393298341368"><i class="fas fa-phone"></i> Chiama</a>
+                <a href="mailto:giammi20000@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
