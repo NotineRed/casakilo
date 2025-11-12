@@ -64,7 +64,6 @@
             </nav>
             <div class="header-actions">
                 <a id="emailBook" class="link" href="mailto:giammi20000@gmail.com" data-label="Email" title="Prenota via email" aria-label="Prenota via email">✉️</a>
-                <a id="openAuth" class="link" href="#" data-label="Area Riservata" title="Accedi o registrati" aria-haspopup="dialog" aria-controls="authModal">👤</a>
             </div>
         </div>
     </header>
@@ -274,56 +273,6 @@
             </div>
         </section>
     </main>
-
-    <!-- Modal Autenticazione -->
-    <div id="authModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle" aria-hidden="true">
-        <div class="modal-card">
-            <button class="modal-close" aria-label="Chiudi">×</button>
-            <h3 id="authTitle">Accedi o Registrati</h3>
-            <div class="tabs">
-                <button class="tab active" data-tab="login">Accedi</button>
-                <button class="tab" data-tab="register">Registrati</button>
-            </div>
-            <div class="tab-panels">
-                <form id="loginForm" class="panel active">
-                    <label>Email
-              <input type="email" name="email" required />
-            </label>
-                    <label>Password
-              <input type="password" name="password" minlength="6" required />
-            </label>
-                    <button type="submit" class="btn btn-primary">Accedi</button>
-                </form>
-                <form id="registerForm" class="panel">
-                    <label>Nome
-              <input type="text" name="name" required />
-            </label>
-                    <label>Email
-              <input type="email" name="email" required />
-            </label>
-                    <label>Password
-              <input type="password" name="password" minlength="6" required />
-            </label>
-                    <div class="captcha-row">
-                        <span class="captcha-q" id="registerCaptchaQ">Verifica anti-spam</span>
-                        <input type="text" id="registerCaptchaInput" inputmode="numeric" placeholder="Risposta" required />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Crea account</button>
-                </form>
-                <div id="verifyPanel" class="panel">
-                    <p>Abbiamo inviato un <strong>codice di verifica</strong> a <strong id="verifyEmailLabel"></strong>.</p>
-                    <div class="code-row">
-                        <input id="verifyCodeInput" type="text" inputmode="numeric" pattern="\\d{6}" maxlength="6" placeholder="Codice a 6 cifre" />
-                        <button type="button" class="btn btn-outline" id="resendCode">Invia codice via email</button>
-                    </div>
-                    <button type="button" class="btn btn-primary" id="confirmCode">Conferma</button>
-                    <p class="auth-note">Se l'email non arriva subito, controlla la cartella spam.</p>
-                    <p class="auth-note">Per completare l'attivazione dell'account è necessaria la verifica dell'email.</p>
-                </div>
-                <p class="auth-note">Registrazione locale per demo: i dati restano sul tuo dispositivo.</p>
-            </div>
-        </div>
-    </div>
 
     <footer class="site-footer">
         <div class="container footer-inner">
