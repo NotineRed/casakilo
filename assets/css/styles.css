@@ -844,7 +844,6 @@ textarea {
     .container {
         width: 94%;
     }
-    
     /* Header mobile-friendly */
     .header-inner {
         padding: .5rem 0;
@@ -864,7 +863,6 @@ textarea {
         height: 42px;
         font-size: .9rem;
     }
-    
     /* Menu mobile */
     .nav-toggle {
         display: inline-block;
@@ -892,7 +890,6 @@ textarea {
         text-align: center;
         padding: .7rem 1rem;
     }
-    
     @keyframes slideDown {
         from {
             opacity: 0;
@@ -903,7 +900,6 @@ textarea {
             transform: translateY(0);
         }
     }
-    
     /* Hero mobile */
     .hero {
         min-height: 60vh;
@@ -932,7 +928,6 @@ textarea {
         padding: .6rem 1rem;
         font-size: .9rem;
     }
-    
     /* Sections mobile */
     .section {
         padding: 2rem 0;
@@ -940,7 +935,6 @@ textarea {
     .section h2 {
         font-size: 1.6rem;
     }
-    
     /* Services grid mobile */
     .grid-3 {
         grid-template-columns: 1fr;
@@ -951,7 +945,6 @@ textarea {
     .service .icon {
         font-size: 2rem;
     }
-    
     /* Gallery mobile */
     .gallery {
         grid-template-columns: 1fr;
@@ -960,7 +953,6 @@ textarea {
     .gallery img {
         border-radius: 12px;
     }
-    
     /* Reviews mobile */
     .reviews {
         grid-template-columns: 1fr;
@@ -968,7 +960,6 @@ textarea {
     .review {
         padding: 1.2rem;
     }
-    
     /* Buttons mobile */
     .btn {
         padding: .8rem 1.2rem;
@@ -978,7 +969,6 @@ textarea {
         padding: 1rem 1.5rem;
         font-size: 1rem;
     }
-    
     /* Cards mobile */
     .card {
         padding: 1.2rem;
@@ -986,7 +976,6 @@ textarea {
     .feature-card {
         padding: 1.2rem;
     }
-    
     /* Footer mobile */
     .footer-inner {
         flex-direction: column;
@@ -994,13 +983,11 @@ textarea {
         gap: .5rem;
         padding: 1.5rem 0;
     }
-    
     /* Modal mobile */
     .modal-card {
         width: 96vw;
         padding: 1.2rem;
     }
-    
     /* Form mobile */
     .form-card form {
         grid-template-columns: 1fr;
@@ -1023,6 +1010,18 @@ textarea {
     .btn {
         font-size: .9rem;
         padding: .7rem 1rem;
+    }
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        text-align: center;
     }
 }
 
