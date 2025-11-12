@@ -1,0 +1,5 @@
+# Non ignorare nulla - includi tutte le risorse
+!assets/**
+!*.html
+!*.css
+!*.js
