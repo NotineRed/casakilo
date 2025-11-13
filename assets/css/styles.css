@@ -288,6 +288,8 @@ button,
     box-shadow: var(--shadow);
     align-content: center;
     justify-content: center;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .link:hover {
