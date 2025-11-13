@@ -47,15 +47,15 @@
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#' || !href) return;
-            
+
             e.preventDefault();
             const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 // Chiudi menu mobile se aperto
                 if (menu) menu.classList.remove('open');
-                
+
                 // Scroll fluido e veloce con offset per header
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
@@ -231,8 +231,10 @@
         const input = document.getElementById(prefix + 'CaptchaInput');
         if (!input) return true;
         const ok = input.value.trim() === (input.dataset.answer || '');
-        if (!ok) { alert('Verifica anti-spam non corretta. Riprova.');
-            setCaptcha(prefix); }
+        if (!ok) {
+            alert('Verifica anti-spam non corretta. Riprova.');
+            setCaptcha(prefix);
+        }
         return ok;
     }
 
@@ -271,11 +273,19 @@
     }
     refreshAuthUI();
 
-    function openModal() { if (modal) { modal.classList.add('open');
-            modal.setAttribute('aria-hidden', 'false'); } }
+    function openModal() {
+        if (modal) {
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+    }
 
-    function closeModal() { if (modal) { modal.classList.remove('open');
-            modal.setAttribute('aria-hidden', 'true'); } }
+    function closeModal() {
+        if (modal) {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+    }
     if (openAuth) {
         openAuth.addEventListener('click', (e) => {
             e.preventDefault();
@@ -369,12 +379,41 @@
     if (resendCodeBtn) resendCodeBtn.addEventListener('click', async() => {
         const u = getUser();
         if (!u) return;
-        try { await apiPost(API.resend, { email: u.email });
-            alert('Nuovo link inviato via email.'); } catch (err) { alert(err.message || 'Errore invio link'); }
+        try {
+            await apiPost(API.resend, { email: u.email });
+            alert('Nuovo link inviato via email.');
+        } catch (err) { alert(err.message || 'Errore invio link'); }
     });
 
     // The PHP flow uses a link in the email; keep button as hint only
     if (confirmCodeBtn) confirmCodeBtn.addEventListener('click', () => {
         alert('Controlla la tua email e clicca il link di verifica.');
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Chiudi tutte le altre FAQ
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle quella cliccata
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
+    // Page loader
+    window.addEventListener('load', () => {
+        const loader = document.querySelector('.page-loader');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300);
+        }
     });
 })();
