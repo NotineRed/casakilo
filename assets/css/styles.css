@@ -2260,3 +2260,25 @@ textarea {
         display: none;
     }
 }
+
+/* ========== FIX CLICKABLE BUTTONS ========== */
+.btn, .btn-primary, .btn-outline, .btn-lg {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 1;
+}
+
+.btn a, .btn-primary a, .btn-outline a {
+    pointer-events: auto !important;
+}
+
+/* Ensure all contact links are clickable */
+a[href^="mailto:"],
+a[href^="tel:"],
+a[href^="https://wa.me"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 10;
+}
