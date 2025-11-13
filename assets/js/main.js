@@ -532,4 +532,27 @@
     }
 
     animateCounter();
+
+    // ========== BACK TO TOP BUTTON ==========
+    const backToTop = document.querySelector('.back-to-top');
+    
+    if (backToTop) {
+        function toggleBackToTop() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+        
+        window.addEventListener('scroll', toggleBackToTop);
+        toggleBackToTop(); // Initial check
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 })();

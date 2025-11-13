@@ -2125,3 +2125,138 @@ textarea {
         font-size: 0.9rem;
     }
 }
+
+/* ========== BACK TO TOP BUTTON ========== */
+.back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--grad);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    z-index: 9998;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.6);
+}
+
+/* ========== TYPING ANIMATION ========== */
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid var(--brand);
+    white-space: nowrap;
+    animation: typing 3.5s steps(60, end), blink 0.75s step-end infinite;
+}
+
+.typing-cursor {
+    display: inline-block;
+    color: var(--brand);
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ========== AVAILABILITY BADGE ========== */
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+    padding: 0.625rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    animation: pulse-availability 2s ease-in-out infinite;
+}
+
+.availability-badge i {
+    font-size: 1.1rem;
+}
+
+@keyframes pulse-availability {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(34, 197, 94, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .typing-text {
+        animation: typing 4s steps(60, end), blink 0.75s step-end infinite;
+    }
+    
+    .availability-badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        bottom: 70px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .typing-text {
+        white-space: normal;
+        border-right: none;
+        animation: none;
+    }
+    
+    .typing-cursor {
+        display: none;
+    }
+}
