@@ -1691,6 +1691,192 @@ textarea {
         font-size: .95rem;
     }
 }
+
+/* ========== SCROLL PROGRESS BAR ========== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--grad);
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px var(--brand);
+}
+
+/* ========== WEATHER & VIRTUAL TOUR ========== */
+.weather-tour-section {
+    padding: 4rem 0;
+    background: var(--bg-alt);
+}
+
+.weather-tour-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Weather Card */
+.weather-card {
+    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(212, 165, 116, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.weather-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.weather-icon {
+    font-size: 2.5rem;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.weather-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.temp-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.temp {
+    font-size: 4rem;
+    font-weight: 700;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.temp-label {
+    font-size: 1.5rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+}
+
+.weather-desc {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.weather-details {
+    display: flex;
+    gap: 2rem;
+}
+
+.weather-details .detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+}
+
+.weather-details .detail i {
+    color: var(--brand);
+}
+
+/* Virtual Tour Card */
+.virtual-tour-card {
+    position: relative;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.virtual-tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.virtual-tour-card:hover .tour-bg {
+    transform: scale(1.1);
+}
+
+.tour-bg {
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"20\" cy=\"20\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"80\" cy=\"40\" r=\"3\" fill=\"rgba(255,255,255,0.08)\"/><circle cx=\"50\" cy=\"80\" r=\"2.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"90\" cy=\"90\" r=\"2\" fill=\"rgba(255,255,255,0.08)\"/></svg>');
+    background-size: 200px;
+    opacity: 0.5;
+    transition: transform 0.6s ease;
+}
+
+.tour-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.tour-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.tour-content h3 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.tour-content p {
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.btn-tour {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.875rem 1.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.btn-tour:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(5px);
+}
+
+.btn-tour i {
+    font-size: 1.2rem;
+}
+
 /* FAQ & Footer Responsive */
 @media (max-width: 768px) {
     .faq-container {
@@ -1713,6 +1899,19 @@ textarea {
     
     .footer-social {
         justify-content: center;
+    }
+    
+    .weather-tour-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .temp {
+        font-size: 3rem;
+    }
+    
+    .tour-content h3 {
+        font-size: 1.5rem;
     }
 }
 
@@ -1747,5 +1946,182 @@ textarea {
     
     .loader-content p {
         font-size: 1rem;
+    }
+    
+    .weather-card,
+    .virtual-tour-card {
+        padding: 1.5rem;
+    }
+    
+    .temp {
+        font-size: 2.5rem;
+    }
+    
+    .weather-details {
+        gap: 1rem;
+    }
+}
+
+/* ========== FEATURED BADGE ========== */
+.featured-badge {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background: var(--grad);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+    animation: badge-pulse 2s ease-in-out infinite;
+    z-index: 10;
+}
+
+.featured-badge i {
+    animation: star-rotate 3s linear infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(212, 165, 116, 0.6);
+    }
+}
+
+@keyframes star-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========== ANIMATE ON SCROLL ========== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation for stat cards */
+.stat-card.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.stat-card.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.stat-card.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.stat-card.animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+
+@media (max-width: 768px) {
+    .featured-badge {
+        top: 80px;
+        right: 10px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-badge {
+        top: 70px;
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* ========== HAPPY GUESTS COUNTER ========== */
+.happy-guests-counter {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(184, 134, 94, 0.05) 100%);
+    border-radius: 15px;
+    border: 2px solid rgba(212, 165, 116, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s;
+}
+
+.happy-guests-counter:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
+}
+
+.counter-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--grad);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+    flex-shrink: 0;
+    animation: heart-beat 2s ease-in-out infinite;
+}
+
+@keyframes heart-beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10%, 30% {
+        transform: scale(0.9);
+    }
+    20%, 40% {
+        transform: scale(1.1);
+    }
+}
+
+.counter-content {
+    flex: 1;
+}
+
+.counter-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.counter-label {
+    font-size: 1rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .happy-guests-counter {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+    
+    .counter-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .counter-number {
+        font-size: 2rem;
+    }
+    
+    .counter-label {
+        font-size: 0.9rem;
     }
 }

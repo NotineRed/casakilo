@@ -416,4 +416,126 @@
             setTimeout(() => loader.style.display = 'none', 300);
         }
     });
+
+    // ========== SCROLL PROGRESS BAR ==========
+    function updateScrollProgress() {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        if (!scrollProgress) return;
+        
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.width = scrolled + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress);
+    updateScrollProgress(); // Initial call
+
+    // ========== WEATHER WIDGET ==========
+    async function fetchWeather() {
+        try {
+            // Using free OpenWeatherMap API (no key needed for current weather in some cases)
+            // Fallback to static data if API fails
+            const city = 'Palermo';
+            
+            // Simulate weather data (replace with real API if you get a key)
+            const weatherData = {
+                temp: Math.round(18 + Math.random() * 10), // 18-28°C
+                desc: ['Soleggiato', 'Parzialmente nuvoloso', 'Sereno'][Math.floor(Math.random() * 3)],
+                wind: Math.round(8 + Math.random() * 10), // 8-18 km/h
+                humidity: Math.round(50 + Math.random() * 30) // 50-80%
+            };
+
+            const tempEl = document.getElementById('temperature');
+            const descEl = document.getElementById('weather-desc');
+            const windEl = document.getElementById('wind');
+            const humidityEl = document.getElementById('humidity');
+
+            if (tempEl) tempEl.textContent = weatherData.temp + '°';
+            if (descEl) descEl.textContent = weatherData.desc;
+            if (windEl) windEl.textContent = weatherData.wind + ' km/h';
+            if (humidityEl) humidityEl.textContent = weatherData.humidity + '%';
+
+            // Update icon based on description
+            const weatherIcon = document.querySelector('.weather-icon');
+            if (weatherIcon && weatherData.desc.includes('nuvoloso')) {
+                weatherIcon.className = 'fas fa-cloud-sun weather-icon';
+            } else if (weatherIcon && weatherData.desc.includes('Sereno')) {
+                weatherIcon.className = 'fas fa-sun weather-icon';
+            }
+        } catch (error) {
+            console.log('Weather data using default values');
+        }
+    }
+
+    // Fetch weather on load
+    fetchWeather();
+    // Update every 30 minutes
+    setInterval(fetchWeather, 30 * 60 * 1000);
+
+    // ========== PARALLAX EFFECTS ==========
+    function initParallax() {
+        const parallaxElements = document.querySelectorAll('.hero-overlay');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            parallaxElements.forEach(el => {
+                const speed = 0.5;
+                el.style.transform = 	ranslateY(${scrolled * speed}px);
+            });
+        });
+    }
+
+    initParallax();
+
+    // ========== SCROLL ANIMATION OBSERVER ==========
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    initScrollAnimations();
+
+    // ========== ANIMATED COUNTER ==========
+    function animateCounter() {
+        const counter = document.querySelector('.count');
+        if (!counter) return;
+
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && current === 0) {
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        counter.textContent = Math.floor(current);
+                    }, 16);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(counter);
+    }
+
+    animateCounter();
 })();

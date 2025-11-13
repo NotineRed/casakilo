@@ -68,6 +68,9 @@
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
     <!-- Page Loader -->
     <div class="page-loader">
         <div class="loader-content">
@@ -103,6 +106,11 @@
     <main id="home">
         <section class="hero">
             <div class="hero-overlay"></div>
+            <!-- Featured Badge -->
+            <div class="featured-badge">
+                <i class="fas fa-star"></i>
+                <span>Top Rated</span>
+            </div>
             <div class="container hero-content">
                 <img src="assets/img/logo.jpeg" alt="Logo Kilò" class="hero-logo" />
                 <h1>Casa Vacanze Kilò</h1>
@@ -112,19 +120,19 @@
                     <a class="btn btn-outline" href="#galleria">Scopri la casa</a>
                 </div>
                 <div class="hero-stats" aria-label="Distanze e servizi principali">
-                    <div class="stat-card">
+                    <div class="stat-card animate-on-scroll">
                         <span class="stat-icon gradient-icon"><i class="fas fa-church"></i></span>
                         <span>Cattedrale · 200 m</span>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card animate-on-scroll">
                         <span class="stat-icon gradient-icon"><i class="fas fa-masks-theater"></i></span>
                         <span>Teatro Massimo · 700 m</span>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card animate-on-scroll">
                         <span class="stat-icon gradient-icon"><i class="fas fa-landmark"></i></span>
                         <span>Fontana Pretoria · 800 m</span>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card animate-on-scroll">
                         <span class="stat-icon gradient-icon"><i class="fas fa-wifi"></i></span>
                         <span>Wi‑Fi gratuito</span>
                     </div>
@@ -167,6 +175,18 @@
                         <li><span class="gradient-icon"><i class="fas fa-bed"></i></span> Biancheria e asciugamani inclusi</li>
                         <li><span class="gradient-icon"><i class="fas fa-tree-city"></i></span> Balcone</li>
                     </ul>
+                    <!-- Happy Guests Counter -->
+                    <div class="happy-guests-counter">
+                        <div class="counter-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="counter-content">
+                            <div class="counter-number">
+                                <span class="count" data-target="247">0</span>+
+                            </div>
+                            <div class="counter-label">Ospiti Felici</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -388,6 +408,52 @@
                 </div>
                 <div class="map-wrap">
                     <iframe title="Mappa Casa Kilò" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Casa+Kil%C3%B2+Palermo&output=embed"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather & Virtual Tour -->
+        <section class="weather-tour-section">
+            <div class="container">
+                <div class="weather-tour-grid">
+                    <!-- Weather Widget -->
+                    <div class="weather-card">
+                        <div class="weather-header">
+                            <i class="fas fa-sun weather-icon"></i>
+                            <h3>Meteo a Palermo</h3>
+                        </div>
+                        <div class="weather-info">
+                            <div class="temp-display">
+                                <span class="temp" id="temperature">22°</span>
+                                <span class="temp-label">C</span>
+                            </div>
+                            <p class="weather-desc" id="weather-desc">Soleggiato</p>
+                            <div class="weather-details">
+                                <div class="detail">
+                                    <i class="fas fa-wind"></i>
+                                    <span id="wind">12 km/h</span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fas fa-tint"></i>
+                                    <span id="humidity">65%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Virtual Tour -->
+                    <div class="virtual-tour-card">
+                        <div class="tour-content">
+                            <i class="fas fa-vr-cardboard tour-icon"></i>
+                            <h3>Tour Virtuale 360°</h3>
+                            <p>Esplora la casa comodamente da casa tua con il nostro tour virtuale interattivo</p>
+                            <a href="#galleria" class="btn-tour">
+                                <i class="fas fa-play-circle"></i>
+                                Inizia il Tour
+                            </a>
+                        </div>
+                        <div class="tour-bg"></div>
+                    </div>
                 </div>
             </div>
         </section>
