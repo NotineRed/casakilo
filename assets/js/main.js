@@ -25,12 +25,50 @@
     const address = document.getElementById("address");
     if (bookingLink) bookingLink.href = BOOKING_URL;
     if (whatsappLink) whatsappLink.href = WHATSAPP_LINK;
-    if (emailLink) emailLink.href = `mailto:${EMAIL}`;
-    if (footerEmail) footerEmail.href = `mailto:${EMAIL}`;
     if (phoneLink) phoneLink.href = `tel:${PHONE.replace(/\s+/g, '')}`;
     if (address) address.textContent = ADDRESS;
+
+    // Copy email to clipboard instead of mailto links
+    function copyEmailToClipboard(button, email) {
+        navigator.clipboard.writeText(email).then(() => {
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Email copiata!';
+            button.style.backgroundColor = '#28a745';
+            button.style.borderColor = '#28a745';
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.backgroundColor = '';
+                button.style.borderColor = '';
+            }, 2500);
+        }).catch(err => {
+            alert(`Email: ${email}`);
+        });
+    }
+
+    // Attach click handlers to email buttons
     const emailBook = document.getElementById('emailBook');
-    if (emailBook) emailBook.href = `mailto:${EMAIL}`;
+    if (emailBook) {
+        emailBook.href = '#';
+        emailBook.addEventListener('click', (e) => {
+            e.preventDefault();
+            copyEmailToClipboard(emailBook, EMAIL);
+        });
+    }
+    if (emailLink) {
+        emailLink.href = '#';
+        emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            copyEmailToClipboard(emailLink, EMAIL);
+        });
+    }
+    if (footerEmail) {
+        footerEmail.href = '#';
+        footerEmail.addEventListener('click', (e) => {
+            e.preventDefault();
+            copyEmailToClipboard(footerEmail, EMAIL);
+        });
+    }
 
     // Mobile nav toggle
     const toggle = document.querySelector('.nav-toggle');
@@ -84,7 +122,7 @@
         }
     });
 
-    // Booking quick request form -> email
+    // Booking quick request form -> copy details
     const form = document.getElementById('requestForm');
     if (form) {
         form.addEventListener('submit', (e) => {
@@ -97,11 +135,23 @@
             const guests = data.get('guests');
             const name = data.get('name');
             const email = data.get('email');
-            const subject = encodeURIComponent('Richiesta disponibilità - Casa Kilò');
-            const body = encodeURIComponent(
-                `Ciao Casa Kilò,%0D%0A%0D%0Avorrei informazioni e disponibilità:%0D%0A- Check-in: ${checkin}%0D%0A- Check-out: ${checkout}%0D%0A- Ospiti: ${guests}%0D%0A- Nome: ${name}%0D%0A- Email: ${email}%0D%0A%0D%0AGrazie!`
-            );
-            window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+            
+            const message = `Richiesta disponibilità - Casa Kilò\n\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nOspiti: ${guests}\nNome: ${name}\nEmail: ${email}\n\nInvia a: ${EMAIL}`;
+            
+            navigator.clipboard.writeText(message).then(() => {
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Richiesta copiata!';
+                submitBtn.style.backgroundColor = '#28a745';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.backgroundColor = '';
+                    form.reset();
+                }, 3000);
+            }).catch(err => {
+                alert(message);
+            });
         });
     }
 
