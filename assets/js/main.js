@@ -164,17 +164,11 @@
         revealTargets.forEach(el => io.observe(el));
     } catch {}
 
-    // Scroll progress bar and header shrink
+    // Scroll progress bar and header shrink (REMOVED - usando la nuova implementazione sotto)
     try {
-        const bar = document.createElement('div');
-        bar.className = 'scroll-progress';
-        document.body.appendChild(bar);
         const header = document.querySelector('.site-header');
         const update = () => {
-            const h = document.documentElement.scrollHeight - window.innerHeight;
             const y = window.scrollY || window.pageYOffset;
-            const p = h > 0 ? (y / h) : 0;
-            bar.style.transform = `scaleX(${Math.min(1, Math.max(0, p))})`;
             if (header) header.classList.toggle('shrink', y > 12);
         };
         addEventListener('scroll', update, { passive: true });
@@ -439,7 +433,7 @@
             
             // Simulate weather data (replace with real API if you get a key)
             const weatherData = {
-                temp: Math.round(18 + Math.random() * 10), // 18-28°C
+                temp: Math.round(18 + Math.random() * 10), // 18-28ï¿½C
                 desc: ['Soleggiato', 'Parzialmente nuvoloso', 'Sereno'][Math.floor(Math.random() * 3)],
                 wind: Math.round(8 + Math.random() * 10), // 8-18 km/h
                 humidity: Math.round(50 + Math.random() * 30) // 50-80%
@@ -450,7 +444,7 @@
             const windEl = document.getElementById('wind');
             const humidityEl = document.getElementById('humidity');
 
-            if (tempEl) tempEl.textContent = weatherData.temp + '°';
+            if (tempEl) tempEl.textContent = weatherData.temp + 'ï¿½';
             if (descEl) descEl.textContent = weatherData.desc;
             if (windEl) windEl.textContent = weatherData.wind + ' km/h';
             if (humidityEl) humidityEl.textContent = weatherData.humidity + '%';
@@ -480,7 +474,7 @@
             const scrolled = window.scrollY;
             parallaxElements.forEach(el => {
                 const speed = 0.5;
-                el.style.transform = 	ranslateY(${scrolled * speed}px);
+                el.style.transform = `translateY(${scrolled * speed}px)`;
             });
         });
     }
