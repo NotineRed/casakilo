@@ -42,10 +42,30 @@
         });
     }
 
-    // Smooth scroll close menu on click (mobile)
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', () => {
-            if (menu) menu.classList.remove('open');
+    // Smooth scroll ottimizzato per i link interni
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || !href) return;
+            
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Chiudi menu mobile se aperto
+                if (menu) menu.classList.remove('open');
+                
+                // Scroll fluido e veloce con offset per header
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
