@@ -2282,3 +2282,30 @@ a[href^="https://wa.me"] {
     position: relative;
     z-index: 10;
 }
+
+/* ========== FORCE CLICKABLE LINKS - ULTIMATE FIX ========== */
+a {
+    pointer-events: auto !important;
+}
+
+a[href^='mailto:'],
+a[href^='tel:'],
+a[href^='https://wa.me'],
+.btn[href],
+.btn-outline[href],
+.btn-primary[href] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 100 !important;
+}
+
+/* Remove any overlay blocking */
+.hero-overlay {
+    pointer-events: none !important;
+}
+
+/* Ensure buttons work */
+button, .btn, a.btn {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
