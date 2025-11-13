@@ -512,6 +512,7 @@
         const duration = 2000; // 2 seconds
         const increment = target / (duration / 16); // 60fps
         let current = 0;
+        const isDecimal = counter.parentElement.textContent.includes('/10');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -522,7 +523,12 @@
                             current = target;
                             clearInterval(timer);
                         }
-                        counter.textContent = Math.floor(current);
+                        // Display as decimal if it's a rating
+                        if (isDecimal) {
+                            counter.textContent = (Math.floor(current) / 10).toFixed(1);
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
                     }, 16);
                 }
             });
