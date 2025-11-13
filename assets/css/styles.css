@@ -2309,3 +2309,38 @@ button, .btn, a.btn {
     cursor: pointer !important;
     pointer-events: auto !important;
 }
+
+/* EMERGENCY FIX: Remove all pointer blocking */
+.hero-overlay {
+    pointer-events: none !important;
+}
+
+.page-loader {
+    pointer-events: none !important;
+}
+
+.scroll-progress {
+    pointer-events: none !important;
+}
+
+/* Force ALL interactive elements clickable */
+a, button, input, select, textarea {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+a[href^='mailto:'],
+a[href^='tel:'],
+a[href^='https://wa.me'] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10000 !important;
+}
+
+.btn, .btn-primary, .btn-outline {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10000 !important;
+}
