@@ -30,6 +30,10 @@
     // State
     let currentImageIndex = 0;
     let galleryImages = [];
+    
+    // Cookie Consent State
+    const COOKIE_CONSENT_KEY = 'casakilo_cookie_consent';
+    const COOKIE_CONSENT_DATE = 'casakilo_cookie_date';
     let theme = localStorage.getItem('theme') || 'light';
     
     /**
@@ -44,6 +48,7 @@
         setupGallery();
         setupForms();
         setupButtons();
+        setupCookieBanner();
         updateYear();
     }
     
@@ -492,6 +497,87 @@
             this.style.filter = 'grayscale(1)';
         });
     });
+    
+    /**
+     * Cookie Consent Banner
+     */
+    function setupCookieBanner() {
+        // Check if user has already made a choice
+        const cookieConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        
+        if (cookieConsent === null) {
+            // User hasn't made a choice yet, show banner
+            showCookieBanner();
+        }
+    }
+    
+    function showCookieBanner() {
+        // Create cookie banner HTML
+        const bannerHTML = `
+            <div class="cookie-banner" id="cookieBanner">
+                <div class="cookie-content">
+                    <div class="cookie-text">
+                        <h3><i class="fas fa-cookie-bite"></i> Utilizzo dei Cookie</h3>
+                        <p>
+                            Utilizziamo cookie tecnici essenziali per il funzionamento del sito. 
+                            Senza accettare i cookie, alcune funzionalità come l'invio dei moduli non saranno disponibili.
+                            <a href="privacy-policy.html" target="_blank">Leggi l'informativa completa</a>
+                        </p>
+                    </div>
+                    <div class="cookie-actions">
+                        <button class="cookie-btn cookie-btn-decline" id="cookieDecline">
+                            Rifiuta
+                        </button>
+                        <button class="cookie-btn cookie-btn-accept" id="cookieAccept">
+                            Accetta Cookie
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Insert banner into DOM
+        document.body.insertAdjacentHTML('beforeend', bannerHTML);
+        
+        // Get elements
+        const banner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('cookieAccept');
+        const declineBtn = document.getElementById('cookieDecline');
+        
+        // Show banner with animation
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 1000);
+        
+        // Accept button
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+            localStorage.setItem(COOKIE_CONSENT_DATE, new Date().toISOString());
+            hideCookieBanner(banner);
+        });
+        
+        // Decline button
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_CONSENT_KEY, 'declined');
+            localStorage.setItem(COOKIE_CONSENT_DATE, new Date().toISOString());
+            hideCookieBanner(banner);
+        });
+    }
+    
+    function hideCookieBanner(banner) {
+        banner.classList.remove('show');
+        setTimeout(() => {
+            banner.classList.add('hidden');
+        }, 500);
+    }
+    
+    function checkCookieConsent() {
+        const cookieConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        return cookieConsent === 'accepted';
+    }
+    
+    // Export for use in forms
+    window.checkCookieConsent = checkCookieConsent;
     
     // Initialize app on DOM ready
     if (document.readyState === 'loading') {

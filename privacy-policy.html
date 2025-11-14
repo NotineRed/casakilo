@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Casa Vacanze Kilò</title>
+    <meta name="description" content="Informativa sulla privacy e trattamento dei dati personali di Casa Vacanze Kilò">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/img/logo.jpeg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/modern.css">
+    
+    <style>
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .privacy-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .privacy-header .last-update {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .privacy-content {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .privacy-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .privacy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .privacy-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .privacy-section h2 i {
+            color: var(--gradient-primary-start);
+            font-size: 1.5rem;
+        }
+        
+        .privacy-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        .privacy-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .privacy-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        
+        .privacy-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .privacy-section ul li::marker {
+            color: var(--gradient-primary-start);
+        }
+        
+        .contact-info {
+            background: var(--gradient-primary);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            margin-top: 1.5rem;
+        }
+        
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info strong {
+            color: white;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gradient-accent-start);
+            font-weight: 500;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            gap: 0.75rem;
+            color: var(--gradient-accent-end);
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 6rem 1rem 2rem;
+            }
+            
+            .privacy-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="assets/img/logo.jpeg" alt="Casa Kilò" class="nav-logo">
+                <span class="brand-text">Casa Kilò</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#gallery" class="nav-link">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Recensioni</a>
+                <a href="index.html#contact" class="nav-link">Contatti</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="privacy-container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Torna alla Home</span>
+        </a>
+        
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <div class="last-update">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Ultimo aggiornamento: 14 Novembre 2025</span>
+            </div>
+        </div>
+        
+        <div class="privacy-content">
+            <!-- Introduzione -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-shield-alt"></i> Introduzione</h2>
+                <p>
+                    Casa Vacanze Kilò tratta i dati personali degli utenti in modo semplice e trasparente. 
+                    Questa informativa descrive come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali 
+                    in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR - UE 2016/679).
+                </p>
+            </div>
+
+            <!-- Titolare del Trattamento -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-user-shield"></i> Titolare del Trattamento</h2>
+                <p>
+                    Il Titolare del trattamento è <strong>Silvia Cassaro</strong>, insieme al Co-Titolare <strong>Antonino Brusca</strong>. 
+                    La gestione tecnica del sito è affidata a <strong>Gian Marco Brusca</strong>.
+                </p>
+                <div class="contact-info">
+                    <h3>Contatti del Titolare</h3>
+                    <p><strong>Titolare:</strong> Silvia Cassaro</p>
+                    <p><strong>Co-Titolare:</strong> Antonino Brusca</p>
+                    <p><strong>Responsabile Tecnico:</strong> Gian Marco Brusca</p>
+                    <p><strong>Email:</strong> giammi20000@gmail.com</p>
+                    <p><strong>Telefono:</strong> +39 329 834 1368</p>
+                </div>
+            </div>
+
+            <!-- Dati Raccolti -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-database"></i> Dati Raccolti</h2>
+                <p>I dati personali che possiamo raccogliere includono:</p>
+                <ul>
+                    <li><strong>Dati identificativi:</strong> Nome, cognome</li>
+                    <li><strong>Dati di contatto:</strong> Email, numero di telefono</li>
+                    <li><strong>Dati di soggiorno:</strong> Date di check-in e check-out, numero ospiti</li>
+                    <li><strong>Messaggi:</strong> Comunicazioni inviate tramite modulo contatti o email</li>
+                    <li><strong>Dati tecnici:</strong> Indirizzo IP, tipo di browser, sistema operativo, cookie</li>
+                </ul>
+            </div>
+
+            <!-- Finalità del Trattamento -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-bullseye"></i> Finalità del Trattamento</h2>
+                <p>I tuoi dati personali vengono trattati per le seguenti finalità:</p>
+                <ul>
+                    <li>Rispondere alle richieste di informazioni e preventivi</li>
+                    <li>Gestire le prenotazioni e la corrispondenza relativa al soggiorno</li>
+                    <li>Rispettare gli obblighi di legge (fiscali, contabili, di pubblica sicurezza)</li>
+                    <li>Garantire la sicurezza e il corretto funzionamento del sito web</li>
+                    <li>Migliorare l'esperienza utente attraverso analisi statistiche aggregate</li>
+                </ul>
+            </div>
+
+            <!-- Base Legale -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-gavel"></i> Base Legale del Trattamento</h2>
+                <p>Il trattamento dei dati personali si basa su:</p>
+                <ul>
+                    <li><strong>Consenso dell'utente:</strong> Fornito al momento della compilazione del modulo contatti</li>
+                    <li><strong>Esecuzione di un contratto:</strong> Necessario per gestire la tua richiesta o prenotazione</li>
+                    <li><strong>Obblighi di legge:</strong> Adempimenti fiscali, contabili e di pubblica sicurezza previsti dalla normativa italiana ed europea</li>
+                    <li><strong>Legittimo interesse:</strong> Sicurezza del sito e prevenzione di frodi</li>
+                </ul>
+            </div>
+
+            <!-- Destinatari dei Dati -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-users"></i> Chi Può Accedere ai Tuoi Dati</h2>
+                <p>I tuoi dati personali possono essere consultati solo da:</p>
+                <ul>
+                    <li><strong>Titolari del trattamento:</strong> Silvia Cassaro e Antonino Brusca</li>
+                    <li><strong>Responsabile tecnico:</strong> Gian Marco Brusca (per la gestione del sito)</li>
+                    <li><strong>Fornitori di servizi:</strong> Provider di hosting, servizi email, servizi di analisi (es. Google Analytics se attivo)</li>
+                </ul>
+                <p>
+                    I fornitori di servizi esterni trattano i dati esclusivamente per garantire il funzionamento del sito 
+                    e sono vincolati da accordi di riservatezza. <strong>I dati non vengono mai venduti o ceduti a terzi per scopi pubblicitari.</strong>
+                </p>
+            </div>
+
+            <!-- Conservazione dei Dati -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-clock"></i> Conservazione dei Dati</h2>
+                <p>Le informazioni personali sono conservate:</p>
+                <ul>
+                    <li><strong>Server di hosting:</strong> Dove risiedono i dati del sito web</li>
+                    <li><strong>Casella email:</strong> Utilizzata per le comunicazioni con i clienti</li>
+                </ul>
+                <h3>Tempi di Conservazione</h3>
+                <ul>
+                    <li><strong>Dati di prenotazione:</strong> Conservati per il tempo necessario alla gestione del soggiorno e secondo gli obblighi fiscali (generalmente 10 anni per motivi fiscali)</li>
+                    <li><strong>Richieste generiche:</strong> Conservate fino a un massimo di 12 mesi dalla ricezione</li>
+                    <li><strong>Dati tecnici e cookie:</strong> Secondo le tempistiche specificate nella Cookie Policy</li>
+                </ul>
+            </div>
+
+            <!-- Diritti dell'Utente -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-hand-paper"></i> I Tuoi Diritti</h2>
+                <p>Ai sensi del GDPR, hai il diritto di:</p>
+                <ul>
+                    <li><strong>Accesso:</strong> Ottenere conferma che i tuoi dati siano trattati e riceverne copia</li>
+                    <li><strong>Rettifica:</strong> Richiedere la correzione di dati inesatti o incompleti</li>
+                    <li><strong>Cancellazione:</strong> Richiedere la cancellazione dei tuoi dati ("diritto all'oblio")</li>
+                    <li><strong>Limitazione:</strong> Richiedere la limitazione del trattamento in casi specifici</li>
+                    <li><strong>Portabilità:</strong> Ricevere i tuoi dati in formato strutturato per trasferirli ad altro titolare</li>
+                    <li><strong>Opposizione:</strong> Opporti al trattamento dei tuoi dati per motivi legittimi</li>
+                    <li><strong>Revoca del consenso:</strong> Revocare il consenso in qualsiasi momento senza pregiudicare la liceità del trattamento pregresso</li>
+                </ul>
+                <p>
+                    Per esercitare questi diritti, puoi contattare Casa Vacanze Kilò tramite email all'indirizzo 
+                    <strong>giammi20000@gmail.com</strong> o telefonare al <strong>+39 329 834 1368</strong>.
+                </p>
+            </div>
+
+            <!-- Cookie -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-cookie-bite"></i> Cookie e Tecnologie Simili</h2>
+                <p>Il sito utilizza le seguenti tipologie di cookie:</p>
+                <ul>
+                    <li><strong>Cookie tecnici necessari:</strong> Essenziali per il funzionamento del sito (es. memorizzazione preferenza tema scuro/chiaro)</li>
+                    <li><strong>Cookie di consenso:</strong> Per memorizzare la tua scelta sulla privacy</li>
+                    <li><strong>Cookie analitici:</strong> Se attivati servizi come Google Analytics, per comprendere come gli utenti utilizzano il sito (dati aggregati e anonimi)</li>
+                </ul>
+                <p>
+                    All'accesso al sito viene mostrato un banner informativo per richiedere il tuo consenso all'uso dei cookie. 
+                    Puoi gestire le tue preferenze in qualsiasi momento attraverso le impostazioni del browser o il banner dei cookie.
+                </p>
+            </div>
+
+            <!-- Sicurezza -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-lock"></i> Sicurezza dei Dati</h2>
+                <p>
+                    Casa Vacanze Kilò adotta misure tecniche e organizzative appropriate per proteggere i dati personali 
+                    da accessi non autorizzati, perdita, distruzione o divulgazione accidentale. Tra queste:
+                </p>
+                <ul>
+                    <li>Connessione HTTPS crittografata per tutte le comunicazioni</li>
+                    <li>Accesso limitato ai dati solo al personale autorizzato</li>
+                    <li>Backup regolari dei dati</li>
+                    <li>Aggiornamenti di sicurezza costanti del sito web</li>
+                    <li>Conformità alle best practice GDPR</li>
+                </ul>
+            </div>
+
+            <!-- Trasferimento Dati -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-globe"></i> Trasferimento dei Dati</h2>
+                <p>
+                    I dati personali sono conservati su server ubicati all'interno dell'Unione Europea. 
+                    Eventuali trasferimenti verso paesi extra-UE avvengono solo verso destinazioni che garantiscono 
+                    un livello adeguato di protezione dei dati, in conformità con il GDPR.
+                </p>
+            </div>
+
+            <!-- Modifiche -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-edit"></i> Modifiche alla Privacy Policy</h2>
+                <p>
+                    Questa Privacy Policy può essere aggiornata periodicamente per riflettere cambiamenti nelle nostre pratiche 
+                    o per conformità normativa. La data dell'ultimo aggiornamento è indicata in cima alla pagina. 
+                    Ti invitiamo a consultare regolarmente questa pagina per essere informato su eventuali modifiche.
+                </p>
+            </div>
+
+            <!-- Reclami -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> Reclami</h2>
+                <p>
+                    Se ritieni che il trattamento dei tuoi dati personali violi il GDPR, hai il diritto di proporre reclamo 
+                    all'autorità di controllo competente:
+                </p>
+                <p>
+                    <strong>Garante per la Protezione dei Dati Personali</strong><br>
+                    Piazza Venezia, 11 - 00187 Roma<br>
+                    Tel: +39 06 696771<br>
+                    Email: garante@gpdp.it<br>
+                    Web: <a href="https://www.garanteprivacy.it" target="_blank" style="color: var(--gradient-accent-start);">www.garanteprivacy.it</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Casa Kilò</h3>
+                    <p>Il tuo rifugio di lusso nel cuore di Palermo</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Link Utili</h4>
+                    <a href="index.html">Home</a>
+                    <a href="richiesta.html">Prenota Ora</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contatti</h4>
+                    <p><i class="fas fa-envelope"></i> giammi20000@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +39 329 834 1368</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Casa Kilò. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/modern.js"></script>
+</body>
+</html>

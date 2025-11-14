@@ -410,6 +410,9 @@
                 </a>
                 <div class="logo floating">Casa Kilò</div>
                 <p class="subtitle">Compila il form e richiedi disponibilità</p>
+                <p class="cookie-notice" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                    <i class="fas fa-info-circle"></i> È necessario accettare i cookie dalla homepage per inviare richieste
+                </p>
             </div>
 
             <div class="form-card">
@@ -569,6 +572,13 @@
         // Form submission
         bookingForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            // Check cookie consent FIRST
+            const cookieConsent = localStorage.getItem('casakilo_cookie_consent');
+            if (cookieConsent !== 'accepted') {
+                alert('⚠️ Devi accettare i cookie per inviare richieste.\n\nTorna alla homepage e accetta i cookie nel banner, poi riprova.');
+                return;
+            }
 
             const formData = new FormData(bookingForm);
             const data = Object.fromEntries(formData);
