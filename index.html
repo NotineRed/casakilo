@@ -1,534 +1,554 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Casa Vacanze Kilò – Palermo</title>
-    <meta name="description" content="Casa Kilò, appartamento con balcone e Wi‑Fi gratuito nel cuore di Palermo, a pochi passi da Cattedrale, Teatro Massimo e Fontana Pretoria. Aria condizionata, cucina attrezzata, bagno con doccia e biancheria inclusa."
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <meta property="og:title" content="Casa Vacanze Kilò – Palermo" />
-    <meta property="og:description" content="Alloggio accogliente in centro a Palermo: 1 camera da letto, soggiorno, cucina attrezzata, Wi‑Fi e balcone. Prenota ora." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/img/logo.jpeg" />
-    <meta property="og:locale" content="it_IT" />
-    <link rel="icon" href="assets/img/logo.jpeg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Kilò • Palermo Luxury Stay</title>
+    <meta name="description" content="Appartamento di lusso nel cuore di Palermo. Design moderno, comfort esclusivo, posizione strategica. Il tuo rifugio siciliano.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Netlify Functions will handle email sending server-side -->
-    <style>
-        .quick-request-cta {
-            position: fixed !important;
-            bottom: 30px !important;
-            right: 30px !important;
-            z-index: 9999 !important;
-        }
-        
-        .btn-richiesta-rapida {
-            display: inline-flex !important;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #d4a574, #b8915f) !important;
-            color: #fff !important;
-            padding: 16px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn-richiesta-rapida:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.6);
-            background: linear-gradient(135deg, #b8915f, #a37a4d) !important;
-        }
-        
-        .btn-richiesta-rapida i {
-            animation: pulse 2s ease-in-out infinite;
-            font-size: 1.2rem;
-        }
-        
-        @keyframes pulse {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/logo.jpeg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/modern.css">
 </head>
-
 <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
-
-    <!-- Page Loader -->
-    <div class="page-loader">
+    <!-- Loader -->
+    <div class="loader">
         <div class="loader-content">
-            <img src="assets/img/logo.jpeg" alt="Logo" class="loader-logo">
-            <div class="loader-spinner"></div>
-            <p>Casa Vacanze Kilò</p>
+            <div class="loader-logo">Casa Kilò</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
         </div>
     </div>
 
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="#home" aria-label="Casa Vacanze Kilò">
-                <img src="assets/img/logo.jpeg" alt="Logo Casa Kilò" class="brand-logo" />
-                <span class="brand-text">Casa Vacanze Kilò</span>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <span class="brand-icon">🏛️</span>
+                <span class="brand-text">Casa Kilò</span>
             </a>
-            <nav class="nav" aria-label="Navigazione principale">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
-                <ul id="menu" class="menu">
-                    <li><a href="#casa">La Casa</a></li>
-                    <li><a href="#struttura">Struttura</a></li>
-                    <li><a href="#galleria">Galleria</a></li>
-                    <li><a href="#recensioni">Recensioni</a></li>
-                    <li><a href="#booking" class="btn btn-primary">Prenota</a></li>
-                    <li><a href="#contatti">Contatti</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a id="emailBook" class="link" href="mailto:giammi20000@gmail.com" data-label="Email" title="Prenota via email" aria-label="Prenota via email">✉️</a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#experience" class="nav-link">Esperienza</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#amenities" class="nav-link">Servizi</a>
+                <a href="#reviews" class="nav-link">Recensioni</a>
+                <a href="#location" class="nav-link">Posizione</a>
+                <a href="#contact" class="nav-link">Contatti</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main id="home">
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <!-- Featured Badge -->
-            <div class="featured-badge">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
                 <i class="fas fa-star"></i>
-                <span>Top Rated</span>
+                <span>Top Rated • Palermo</span>
             </div>
-            <div class="container hero-content">
-                <img src="assets/img/logo.jpeg" alt="Logo Kilò" class="hero-logo" />
-                <h1>Casa Vacanze Kilò</h1>
-                <p class="hero-subtitle">
-                    <span class="typing-text">Nel cuore di Palermo, tra la Cattedrale e il Teatro Massimo.</span>
-                    <span class="typing-cursor">|</span>
-                </p>
-                <div class="availability-badge">
-                    <i class="fas fa-calendar-check"></i>
-                    <span>Disponibile Ora</span>
-                </div>
-                <div class="hero-cta">
-                    <a class="btn btn-primary" href="#booking">Prenota ora</a>
-                    <a class="btn btn-outline" href="#galleria">Scopri la casa</a>
-                </div>
-                <div class="hero-stats" aria-label="Distanze e servizi principali">
-                    <div class="stat-card animate-on-scroll">
-                        <span class="stat-icon gradient-icon"><i class="fas fa-church"></i></span>
-                        <span>Cattedrale · 200 m</span>
+            
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                <span class="title-main">Benvenuto a</span>
+                <span class="title-accent">Casa Kilò</span>
+            </h1>
+            
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Un rifugio esclusivo nel cuore pulsante di Palermo.<br>
+                Dove il lusso incontra l'autenticità siciliana.
+            </p>
+            
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="stat-card animate-on-scroll">
-                        <span class="stat-icon gradient-icon"><i class="fas fa-masks-theater"></i></span>
-                        <span>Teatro Massimo · 700 m</span>
-                    </div>
-                    <div class="stat-card animate-on-scroll">
-                        <span class="stat-icon gradient-icon"><i class="fas fa-landmark"></i></span>
-                        <span>Fontana Pretoria · 800 m</span>
-                    </div>
-                    <div class="stat-card animate-on-scroll">
-                        <span class="stat-icon gradient-icon"><i class="fas fa-wifi"></i></span>
-                        <span>Wi‑Fi gratuito</span>
+                    <div class="stat-content">
+                        <div class="stat-value">9.6</div>
+                        <div class="stat-label">Booking.com</div>
                     </div>
                 </div>
-            </div>
-            <a href="#casa" class="scroll-indicator" aria-label="Scorri per scoprire di più">
-                <span></span>
-            </a>
-            <!-- Video background con fallback poster -->
-            <video class="hero-video" autoplay muted loop playsinline poster="assets/img/beedroom-1.jpg">
-          <source src="assets/img/video.mp4" type="video/mp4" />
-        </video>
-        </section>
-
-        <section id="casa" class="section">
-            <div class="container two-col">
-                <div>
-                    <h2>La Casa</h2>
-                    <p>
-                        Situato a Palermo, a <strong>200 m</strong> dalla <strong>Cattedrale di Palermo</strong>,
-                        <strong>800 m</strong> da <strong>Fontana Pretoria</strong> e <strong>700 m</strong> dal <strong>Teatro Massimo</strong>,
-                        <strong>Casa Kilò</strong> è un alloggio accogliente con <strong>balcone</strong> e <strong>Wi‑Fi gratuito</strong>. L'appartamento climatizzato comprende <strong>1 camera da letto</strong>, un <strong>soggiorno</strong>, una <strong>cucina attrezzata</strong>                        con utensili, frigorifero e macchina da caffè, e <strong>1 bagno</strong> con doccia e asciugacapelli. A disposizione <strong>asciugamani e lenzuola</strong>.
-                    </p>
-                    <ul class="highlights">
-                        <li>Via Maqueda a 700 m · Stazione Palermo Centrale a 1,6 km</li>
-                        <li>Piazza Castelnuovo e Teatro Politeama nelle vicinanze</li>
-                        <li>Aeroporto Falcone–Borsellino a circa 29 km</li>
-                        <li>Le coppie apprezzano la posizione: <strong>9,6/10</strong> per viaggi a due</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Plus dell'alloggio</h3>
-                    <ul class="features">
-                        <li><span class="gradient-icon"><i class="fas fa-snowflake"></i></span> Aria condizionata</li>
-                        <li><span class="gradient-icon"><i class="fas fa-wifi"></i></span> Wi‑Fi gratuito</li>
-                        <li><span class="gradient-icon"><i class="fas fa-utensils"></i></span> Cucina completa</li>
-                        <li><span class="gradient-icon"><i class="fas fa-soap"></i></span> Lavatrice</li>
-                        <li><span class="gradient-icon"><i class="fas fa-tv"></i></span> TV schermo piatto</li>
-                        <li><span class="gradient-icon"><i class="fas fa-shower"></i></span> Bagno con doccia</li>
-                        <li><span class="gradient-icon"><i class="fas fa-bed"></i></span> Biancheria e asciugamani inclusi</li>
-                        <li><span class="gradient-icon"><i class="fas fa-tree-city"></i></span> Balcone</li>
-                    </ul>
-                    <!-- Rating Badge -->
-                    <div class="happy-guests-counter">
-                        <div class="counter-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="counter-content">
-                            <div class="counter-number">
-                                <span class="count" data-target="96">0</span>/10
-                            </div>
-                            <div class="counter-label">Valutazione Booking.com</div>
-                        </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">Centro</div>
+                        <div class="stat-label">Storico</div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="struttura" class="section alt">
-            <div class="container">
-                <h2>Struttura e Servizi</h2>
-                <div class="grid-3">
-                    <div class="service">
-                        <span class="icon gradient-icon"><i class="fas fa-house-chimney"></i></span>
-                        <h3>Appartamento</h3>
-                        <p>Camera matrimoniale ampia, soggiorno confortevole, cucina abitabile.</p>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-wifi"></i>
                     </div>
-                    <div class="service">
-                        <span class="icon gradient-icon"><i class="fas fa-signal"></i></span>
-                        <h3>Connessione</h3>
-                        <p>Wi‑Fi gratuito in tutta la casa.</p>
-                    </div>
-                    <div class="service">
-                        <span class="icon gradient-icon"><i class="fas fa-snowflake"></i></span>
-                        <h3>Comfort</h3>
-                        <p>Aria condizionata e riscaldamento per ogni stagione.</p>
-                    </div>
-                    <div class="service">
-                        <span class="icon gradient-icon"><i class="fas fa-kitchen-set"></i></span>
-                        <h3>Cucina attrezzata</h3>
-                        <p>Frigorifero, forno a microonde, piano cottura, utensili e macchina da caffè.</p>
-                    </div>
-                    <div class="service">
-                        <span class="icon gradient-icon"><i class="fas fa-bath"></i></span>
-                        <h3>Bagno</h3>
-                        <p>Doccia, asciugacapelli, set asciugamani e biancheria.</p>
-                    </div>
-                    <div class="service">
-                        <span class="icon gradient-icon"><i class="fas fa-location-dot"></i></span>
-                        <h3>Posizione</h3>
-                        <p>Centro storico: Cattedrale, Teatro Massimo e Via Maqueda a piedi.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="galleria" class="section">
-            <div class="container">
-                <h2>Galleria</h2>
-                <div class="gallery">
-                    <img src="assets/img/enter.jpg" alt="Ingresso - vista 1" />
-                    <img src="assets/img/enter-2.jpg" alt="Ingresso - vista 2" />
-
-                    <img src="assets/img/kitchen-1.jpg" alt="Cucina – vista 1" />
-                    <img src="assets/img/kitchen-2.jpg" alt="Cucina – vista 2" />
-                    <img src="assets/img/kitchen-3.jpg" alt="Cucina – vista 3" />
-
-                    <img src="assets/img/living.jpg" alt="Soggiorno – vista 1" />
-                    <img src="assets/img/living-2.jpg" alt="Soggiorno – vista 2" />
-
-                    <img src="assets/img/bedroom.jpg" alt="Camera da letto – vista 1" />
-                    <img src="assets/img/bedroom-2.jpeg" alt="Camera da letto – vista 2" />
-                    <img src="assets/img/bedroom-3.jpg" alt="Camera da letto – vista 3" />
-
-                    <img src="assets/img/bath.jpeg" alt="Bagno – doccia e lavabo" />
-                    <img src="assets/img/bath-2.jpeg" alt="Bagno – doccia" />
-                </div>
-            </div>
-        </section>
-
-        <section id="recensioni" class="section alt">
-            <div class="container">
-                <h2>Recensioni</h2>
-                <div class="reviews">
-                    <article class="review">
-                        <div class="stars" aria-label="Valutazione 5 su 5">★★★★★</div>
-                        <p>"Posizione perfetta per visitare Palermo a piedi. Casa pulita e curata, host disponibile."</p>
-                        <span class="author">— Ospite da Booking.com</span>
-                    </article>
-                    <article class="review">
-                        <div class="stars" aria-label="Valutazione 5 su 5">★★★★★</div>
-                        <p>"A due passi da Cattedrale e Teatro Massimo. Ottimo Wi‑Fi e aria condizionata efficace."</p>
-                        <span class="author">— Coppia</span>
-                    </article>
-                    <article class="review">
-                        <div class="stars" aria-label="Valutazione 4.5 su 5">★★★★☆</div>
-                        <p>"Comfortevole e silenziosa, cucina attrezzata e biancheria inclusa. Torneremo!"</p>
-                        <span class="author">— Famiglia</span>
-                    </article>
-                </div>
-                <p class="note">Valutazione posizione coppie: <strong>9,6/10</strong> (fonte Booking.com)</p>
-            </div>
-        </section>
-
-        <section id="booking" class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 2rem;">Richiedi Disponibilità</h2>
-                <p style="text-align: center; color: var(--muted); margin-bottom: 3rem;">
-                    Compila il form e ti risponderemo al più presto con disponibilità e tariffe personalizzate
-                </p>
-
-                <div style="max-width: 700px; margin: 0 auto;">
-                    <div class="card" style="padding: 2.5rem;">
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-bottom: 1.5rem;">
-                            <a class="btn btn-primary btn-lg" style="text-align: center; padding: 1rem;" href="assets/modern-login-signup-main/index.html">
-                                <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Prenota Ora
-                            </a>
-                            <a class="btn btn-outline btn-lg" style="text-align: center; padding: 1rem;" href="tel:+393298341368">
-                                <i class="fas fa-phone" style="margin-right: 8px;"></i> Chiama Ora
-                            </a>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem;">
-                            <a class="btn btn-outline" style="text-align: center;" href="mailto:giammi20000@gmail.com">
-                                <i class="fas fa-envelope" style="margin-right: 8px;"></i> Scrivi Email
-                            </a>
-                            <a class="btn btn-outline" style="text-align: center;" href="https://wa.me/393298341368" target="_blank">
-                                <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp
-                            </a>
-                        </div>
-
-                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
-                            <h4 style="text-align: center; margin-bottom: 1rem; color: var(--brand);">📞 Contatti Rapidi</h4>
-                            <div style="text-align: center; color: var(--muted);">
-                                <p style="margin: 0.5rem 0;"><strong>Telefono:</strong> <a href="tel:+393298341368" style="color: var(--brand);">+39 329 834 1368</a></p>
-                                <p style="margin: 0.5rem 0;"><strong>Email:</strong> <a href="mailto:giammi20000@gmail.com" style="color: var(--brand);">giammi20000@gmail.com</a></p>
-                                <p style="margin: 1.5rem 0 0.5rem; font-size: 0.9rem;">⏰ Check-in: 15:00 | Check-out: 10:00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 3rem;">Domande Frequenti</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="gradient-icon"><i class="fas fa-clock"></i></span>
-                            <span>Quali sono gli orari di check-in e check-out?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Check-in dalle 15:00, check-out entro le 10:00. Per esigenze particolari contattaci, faremo del nostro meglio per accontentarti!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="gradient-icon"><i class="fas fa-parking"></i></span>
-                            <span>C'è parcheggio disponibile?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Nelle vicinanze sono presenti parcheggi pubblici a pagamento. Ti forniremo tutte le informazioni necessarie al momento della prenotazione.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="gradient-icon"><i class="fas fa-paw"></i></span>
-                            <span>Sono ammessi animali domestici?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Siamo spiacenti, ma al momento non possiamo accogliere animali domestici nella struttura.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="gradient-icon"><i class="fas fa-ban-smoking"></i></span>
-                            <span>È permesso fumare?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>L'appartamento è completamente non fumatori. È possibile fumare sul balcone.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="gradient-icon"><i class="fas fa-users"></i></span>
-                            <span>Quante persone possono soggiornare?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>L'appartamento può ospitare comodamente fino a 4 persone con camera matrimoniale e soggiorno con divano letto.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span class="gradient-icon"><i class="fas fa-credit-card"></i></span>
-                            <span>Quali metodi di pagamento accettate?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Accettiamo bonifico bancario, contanti e carte di credito. Un deposito cauzionale potrebbe essere richiesto al check-in.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contatti" class="section alt">
-            <div class="container two-col">
-                <div>
-                    <h2>Contatti</h2>
-                    <p>
-                        <strong>Indirizzo</strong><br />
-                        <span id="address">Via [inserisci via], Palermo, Italia</span>
-                    </p>
-                    <p>
-                        <strong>Telefono</strong>: <a id="phoneLink" href="tel:+39000000000">+39 000 000 0000</a><br />
-                        <strong>Email</strong>: <a id="footerEmail" href="mailto:giammi20000@gmail.com">giammi20000@gmail.com</a>
-                    </p>
-                    <p>
-                        <strong>Orari</strong>: Check‑in 15:00 · Check‑out 10:00
-                    </p>
-                </div>
-                <div class="map-wrap">
-                    <iframe title="Mappa Casa Kilò" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Casa+Kil%C3%B2+Palermo&output=embed"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- Weather & Virtual Tour -->
-        <section class="weather-tour-section">
-            <div class="container">
-                <div class="weather-tour-grid">
-                    <!-- Weather Widget -->
-                    <div class="weather-card">
-                        <div class="weather-header">
-                            <i class="fas fa-sun weather-icon"></i>
-                            <h3>Meteo a Palermo</h3>
-                        </div>
-                        <div class="weather-info">
-                            <div class="temp-display">
-                                <span class="temp" id="temperature">22°</span>
-                                <span class="temp-label">C</span>
-                            </div>
-                            <p class="weather-desc" id="weather-desc">Soleggiato</p>
-                            <div class="weather-details">
-                                <div class="detail">
-                                    <i class="fas fa-wind"></i>
-                                    <span id="wind">12 km/h</span>
-                                </div>
-                                <div class="detail">
-                                    <i class="fas fa-tint"></i>
-                                    <span id="humidity">65%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Virtual Tour -->
-                    <div class="virtual-tour-card">
-                        <div class="tour-content">
-                            <i class="fas fa-vr-cardboard tour-icon"></i>
-                            <h3>Tour Virtuale 360°</h3>
-                            <p>Esplora la casa comodamente da casa tua con il nostro tour virtuale interattivo</p>
-                            <a href="#galleria" class="btn-tour">
-                                <i class="fas fa-play-circle"></i>
-                                Inizia il Tour
-                            </a>
-                        </div>
-                        <div class="tour-bg"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Casa Vacanze Kilò</h4>
-                    <p style="color: #999; line-height: 1.8;">Il tuo rifugio nel cuore di Palermo. Comfort, posizione centrale e ospitalità autentica siciliana.</p>
-                    <div class="trust-badges">
-                        <span class="badge"><i class="fas fa-shield-alt"></i> Sicuro</span>
-                        <span class="badge"><i class="fas fa-certificate"></i> Verificato</span>
-                        <span class="badge"><i class="fas fa-star"></i> 9.6/10</span>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Link Rapidi</h4>
-                    <ul class="footer-links">
-                        <li><a href="#casa">La Casa</a></li>
-                        <li><a href="#struttura">Servizi</a></li>
-                        <li><a href="#galleria">Galleria</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#booking">Prenota</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contatti</h4>
-                    <ul class="footer-contacts">
-                        <li><i class="fas fa-phone"></i> <a href="tel:+393298341368">+39 329 834 1368</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:giammi20000@gmail.com">giammi20000@gmail.com</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Palermo, Sicilia</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="https://wa.me/393298341368" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:giammi20000@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+393298341368" aria-label="Telefono"><i class="fas fa-phone"></i></a>
+                    <div class="stat-content">
+                        <div class="stat-value">Wi-Fi</div>
+                        <div class="stat-label">Ultra veloce</div>
                     </div>
                 </div>
             </div>
             
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                <button class="btn btn-primary" id="bookNow">
+                    <span>Prenota Ora</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-secondary" id="viewGallery">
+                    <span>Scopri di più</span>
+                    <i class="fas fa-images"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="hero-scroll" data-aos="fade-up" data-aos-delay="600">
+            <div class="scroll-indicator">
+                <span>Scorri</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">L'Esperienza</span>
+                <h2 class="section-title">Un soggiorno indimenticabile</h2>
+                <p class="section-subtitle">Ogni dettaglio è pensato per il tuo comfort e benessere</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="card-title">Design Raffinato</h3>
+                    <p class="card-description">Arredamento curato nei minimi dettagli con materiali premium e stile contemporaneo che abbraccia l'eleganza siciliana.</p>
+                </div>
+                
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <h3 class="card-title">Posizione Centrale</h3>
+                    <p class="card-description">A pochi passi da Cattedrale, Teatro Massimo e Fontana Pretoria. Il meglio di Palermo a portata di mano.</p>
+                </div>
+                
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="card-title">Servizi Esclusivi</h3>
+                    <p class="card-description">Wi-Fi ultra veloce, aria condizionata, cucina completamente attrezzata e ogni comfort per un soggiorno perfetto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Gallery</span>
+                <h2 class="section-title">Immergiti nell'atmosfera</h2>
+            </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/img/hero.jpg" alt="Living Room" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/img/bedroom.jpg" alt="Bedroom" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/img/kitchen.jpg" alt="Kitchen" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/img/bathroom.jpg" alt="Bathroom" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/img/balcony.jpg" alt="Balcony" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/img/details.jpg" alt="Details" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities" id="amenities">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Servizi</span>
+                <h2 class="section-title">Tutto ciò di cui hai bisogno</h2>
+            </div>
+            
+            <div class="amenities-grid">
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-wifi"></i>
+                    <span>Wi-Fi Ultra Veloce</span>
+                </div>
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Aria Condizionata</span>
+                </div>
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-kitchen-set"></i>
+                    <span>Cucina Attrezzata</span>
+                </div>
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-tv"></i>
+                    <span>Smart TV</span>
+                </div>
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="250">
+                    <i class="fas fa-door-open"></i>
+                    <span>Balcone Privato</span>
+                </div>
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-shirt"></i>
+                    <span>Biancheria Inclusa</span>
+                </div>
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="350">
+                    <i class="fas fa-shower"></i>
+                    <span>Doccia Moderna</span>
+                </div>
+                <div class="amenity-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-mug-hot"></i>
+                    <span>Macchina Caffè</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Recensioni</span>
+                <h2 class="section-title">Cosa dicono i nostri ospiti</h2>
+            </div>
+            
+            <div class="reviews-carousel" id="reviewsCarousel">
+                <div class="review-card" data-aos="fade-up">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Appartamento meraviglioso in posizione perfetta. Ogni dettaglio è curato, dalla biancheria di qualità alla cucina super attrezzata. Torneremo sicuramente!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <div class="author-name">Marco R.</div>
+                            <div class="author-meta">Milano • Agosto 2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Posizione eccezionale! Abbiamo visitato tutti i monumenti principali a piedi. L'appartamento è pulitissimo e modernissimo. Host super disponibile."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">G</div>
+                        <div class="author-info">
+                            <div class="author-name">Giulia S.</div>
+                            <div class="author-meta">Roma • Settembre 2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Esperienza fantastica! L'appartamento supera le aspettative delle foto. Confortevole, silenzioso nonostante sia in centro, e con un balcone delizioso."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <div class="author-name">Alessandro P.</div>
+                            <div class="author-meta">Torino • Ottobre 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info" data-aos="fade-right">
+                    <span class="section-label">Posizione</span>
+                    <h2 class="section-title">Nel cuore di Palermo</h2>
+                    <p class="location-description">
+                        Casa Kilò si trova nel centro storico di Palermo, a pochi passi dalle principali attrazioni della città. 
+                        La posizione strategica ti permette di esplorare a piedi i tesori di questa meravigliosa città.
+                    </p>
+                    
+                    <div class="location-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-walking"></i>
+                            <div>
+                                <strong>Cattedrale di Palermo</strong>
+                                <span>5 minuti a piedi</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-walking"></i>
+                            <div>
+                                <strong>Teatro Massimo</strong>
+                                <span>8 minuti a piedi</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-walking"></i>
+                            <div>
+                                <strong>Fontana Pretoria</strong>
+                                <span>10 minuti a piedi</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="viewMap">
+                        <span>Visualizza Mappa</span>
+                        <i class="fas fa-map"></i>
+                    </button>
+                </div>
+                
+                <div class="location-map" data-aos="fade-left">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-location-dot"></i>
+                        <p>Mappa interattiva</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Contatti</span>
+                <h2 class="section-title">Prenota il tuo soggiorno</h2>
+                <p class="section-subtitle">Siamo a tua disposizione per qualsiasi informazione</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-methods" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Copia la nostra email negli appunti</p>
+                        <button class="btn btn-outline" id="copyEmail">
+                            <span>giammi20000@gmail.com</span>
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>Scrivici direttamente su WhatsApp</p>
+                        <a href="https://wa.me/393298341368?text=Ciao%20Casa%20Kilò%2C%20vorrei%20info%20e%20disponibilit%C3%A0" class="btn btn-outline" target="_blank">
+                            <span>Chatta con noi</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Telefono</h3>
+                        <p>Chiamaci per informazioni immediate</p>
+                        <a href="tel:+393298341368" class="btn btn-outline">
+                            <span>+39 329 834 1368</span>
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="booking-card" data-aos="fade-left">
+                    <div class="booking-header">
+                        <h3>Richiesta Rapida</h3>
+                        <p>Compila il form e riceverai una risposta entro 24h</p>
+                    </div>
+                    
+                    <form class="booking-form" id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkIn">Check-in</label>
+                                <input type="date" id="checkIn" name="checkIn" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkOut">Check-out</label>
+                                <input type="date" id="checkOut" name="checkOut" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Numero ospiti</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Seleziona...</option>
+                                <option value="1">1 ospite</option>
+                                <option value="2">2 ospiti</option>
+                                <option value="3">3 ospiti</option>
+                                <option value="4">4 ospiti</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Nome completo</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Il tuo nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="tua@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Messaggio (opzionale)</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Richieste speciali..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Invia Richiesta</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Casa Kilò</h3>
+                    <p>Il tuo rifugio di lusso nel cuore di Palermo</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Airbnb"><i class="fab fa-airbnb"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Link Rapidi</h4>
+                    <a href="#experience">Esperienza</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#amenities">Servizi</a>
+                    <a href="#reviews">Recensioni</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contatti</h4>
+                    <p><i class="fas fa-envelope"></i> giammi20000@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +39 329 834 1368</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Palermo, Italia</p>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
-                <p>© <span id="year"></span> Casa Vacanze Kilò – Tutti i diritti riservati</p>
-                <a href="#home" class="back-to-top" aria-label="Torna su"><i class="fas fa-arrow-up"></i></a>
+                <p>&copy; <span id="year">2024</span> Casa Kilò. Tutti i diritti riservati.</p>
+                <div class="footer-credits">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Termini di Servizio</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <noscript>
-      Per una migliore esperienza abilita JavaScript. Puoi comunque prenotare via email: <a href="mailto:giammi20000@gmail.com">giammi20000@gmail.com</a>
-    </noscript>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" aria-label="Torna su">
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Torna su">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="assets/js/main.js"></script>
-
-    <!-- Bottone Richiesta Rapida -->
-    <div class="quick-request-cta">
-        <a href="assets/modern-login-signup-main/index.html" class="btn-richiesta-rapida">
-            <i class="fas fa-bolt"></i> Richiesta Rapida
-        </a>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Precedente">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Successivo">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <img src="" alt="" id="lightboxImg">
     </div>
-</body>
 
+    <!-- Scripts -->
+    <script src="assets/js/modern.js"></script>
+</body>
 </html>
