@@ -1398,3 +1398,76 @@ section {
 [data-aos="zoom-in"].aos-animate {
     transform: scale(1);
 }
+
+/* ========================================
+   Floating Request Button
+   ======================================== */
+
+.floating-request {
+    position: fixed;
+    bottom: calc(var(--spacing-xl) + 70px);
+    right: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--gradient-accent);
+    color: white;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-xl);
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(200px);
+    transition: var(--transition-smooth);
+    z-index: 998;
+    animation: slideInRight 0.8s ease-out 1s forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+.floating-request:hover {
+    transform: translateX(-4px) scale(1.05);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+}
+
+.floating-request i {
+    font-size: 1.2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.floating-request span {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .floating-request {
+        bottom: calc(var(--spacing-xl) + 70px);
+        right: var(--spacing-md);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .floating-request span {
+        display: none;
+    }
+    
+    .floating-request i {
+        font-size: 1.5rem;
+    }
+}

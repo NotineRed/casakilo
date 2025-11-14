@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiesta Rapida • Casa Kilò Palermo</title>
+    <meta name="description" content="Richiedi disponibilità e prenota il tuo soggiorno a Casa Kilò - Appartamento di lusso nel cuore di Palermo">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/logo.jpeg">
+    
+    <style>
+        :root {
+            --primary: #d4a574;
+            --primary-dark: #b8915f;
+            --gradient-primary: linear-gradient(135deg, #d4a574 0%, #b8915f 100%);
+            --gradient-accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6c757d;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.20);
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b8c1;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .page-gradient {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .page-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20px 20px, var(--glass-border) 1px, transparent 0);
+            background-size: 40px 40px;
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            transform: translateX(-4px);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .form-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-xl);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group label i {
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem;
+            background: var(--bg-primary);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            background: var(--bg-primary);
+            border: 2px solid transparent;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .contact-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-btn i {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .contact-btn span {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(212, 165, 116, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .info-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: white;
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .form-card {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .form-section:nth-child(1) { animation-delay: 0.1s; }
+        .form-section:nth-child(2) { animation-delay: 0.2s; }
+        .form-section:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="page-wrapper">
+        <div class="page-bg">
+            <div class="page-gradient"></div>
+            <div class="page-pattern"></div>
+        </div>
+
+        <div class="container">
+            <div class="header">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Torna alla home</span>
+                </a>
+                <div class="logo floating">Casa Kilò</div>
+                <p class="subtitle">Compila il form e richiedi disponibilità</p>
+            </div>
+
+            <div class="form-card">
+                <form id="bookingForm">
+                    <div class="form-section fade-in">
+                        <div class="section-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Date del soggiorno</span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    Check-in
+                                </label>
+                                <input type="date" id="checkIn" name="checkIn" required>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Check-out
+                                </label>
+                                <input type="date" id="checkOut" name="checkOut" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-users"></i>
+                                Numero ospiti
+                            </label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Seleziona...</option>
+                                <option value="1">1 ospite</option>
+                                <option value="2">2 ospiti</option>
+                                <option value="3">3 ospiti</option>
+                                <option value="4">4 ospiti</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section fade-in">
+                        <div class="section-title">
+                            <i class="fas fa-user"></i>
+                            <span>I tuoi dati</span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-id-card"></i>
+                                Nome completo
+                            </label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Mario Rossi" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="mario@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="fas fa-phone"></i>
+                                    Telefono (opzionale)
+                                </label>
+                                <input type="tel" id="phone" name="phone" placeholder="+39 123 456 7890">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section fade-in">
+                        <div class="section-title">
+                            <i class="fas fa-comment-dots"></i>
+                            <span>Note aggiuntive</span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-pen"></i>
+                                Richieste speciali (opzionale)
+                            </label>
+                            <textarea id="message" name="message" placeholder="Es: Arrivo previsto alle 15:00, necessito di culla per bambino..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <p>
+                            <i class="fas fa-info-circle"></i>
+                            Cliccando su "Invia Richiesta", i dettagli verranno copiati negli appunti. 
+                            Potrai poi incollarli nella tua email o su WhatsApp per contattarci direttamente.
+                        </p>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Invia Richiesta</span>
+                    </button>
+                </form>
+
+                <div style="margin-top: 2rem; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                    <p style="margin-bottom: 1rem;">Oppure contattaci direttamente:</p>
+                </div>
+
+                <div class="contact-methods">
+                    <button class="contact-btn" id="copyEmail">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </button>
+                    <a href="https://wa.me/393298341368?text=Ciao%20Casa%20Kilò%2C%20vorrei%20info%20e%20disponibilit%C3%A0" class="contact-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="tel:+393298341368" class="contact-btn">
+                        <i class="fas fa-phone"></i>
+                        <span>Telefono</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const EMAIL = 'giammi20000@gmail.com';
+        const themeToggle = document.getElementById('themeToggle');
+        const bookingForm = document.getElementById('bookingForm');
+        const copyEmailBtn = document.getElementById('copyEmail');
+        const checkInInput = document.getElementById('checkIn');
+        const checkOutInput = document.getElementById('checkOut');
+
+        // Theme management
+        let theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            theme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateThemeIcon();
+        });
+
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Set min dates
+        const today = new Date().toISOString().split('T')[0];
+        checkInInput.min = today;
+
+        checkInInput.addEventListener('change', () => {
+            const checkIn = new Date(checkInInput.value);
+            const nextDay = new Date(checkIn);
+            nextDay.setDate(nextDay.getDate() + 1);
+            checkOutInput.min = nextDay.toISOString().split('T')[0];
+        });
+
+        // Form submission
+        bookingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(bookingForm);
+            const data = Object.fromEntries(formData);
+
+            const message = `🏛️ RICHIESTA PRENOTAZIONE - CASA KILÒ\n\n` +
+                `📅 Check-in: ${data.checkIn}\n` +
+                `📅 Check-out: ${data.checkOut}\n` +
+                `👥 Ospiti: ${data.guests}\n` +
+                `👤 Nome: ${data.fullName}\n` +
+                `📧 Email: ${data.email}\n` +
+                `${data.phone ? `📱 Telefono: ${data.phone}\n` : ''}` +
+                `${data.message ? `💬 Note: ${data.message}\n` : ''}\n` +
+                `📧 Invia a: ${EMAIL}`;
+
+            try {
+                await copyToClipboard(message);
+
+                const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                const originalHTML = submitBtn.innerHTML;
+
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> <span>Richiesta copiata negli appunti!</span>';
+                submitBtn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.style.background = '';
+                    
+                    // Offer to open email client
+                    if (confirm('Richiesta copiata! Vuoi aprire WhatsApp per inviarla?')) {
+                        const whatsappMsg = encodeURIComponent(message);
+                        window.open(`https://wa.me/393298341368?text=${whatsappMsg}`, '_blank');
+                    }
+                }, 3000);
+
+            } catch (err) {
+                alert(message);
+            }
+        });
+
+        // Copy email
+        copyEmailBtn.addEventListener('click', async () => {
+            try {
+                await copyToClipboard(EMAIL);
+                
+                const icon = copyEmailBtn.querySelector('i');
+                const span = copyEmailBtn.querySelector('span');
+                
+                icon.className = 'fas fa-check';
+                span.textContent = 'Copiata!';
+                copyEmailBtn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                copyEmailBtn.style.color = 'white';
+
+                setTimeout(() => {
+                    icon.className = 'fas fa-envelope';
+                    span.textContent = 'Email';
+                    copyEmailBtn.style.background = '';
+                    copyEmailBtn.style.color = '';
+                }, 2500);
+
+            } catch (err) {
+                alert(`Email: ${EMAIL}`);
+            }
+        });
+
+        // Utility: Copy to clipboard
+        async function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return await navigator.clipboard.writeText(text);
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    throw new Error('Copy failed');
+                } finally {
+                    document.body.removeChild(textArea);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
